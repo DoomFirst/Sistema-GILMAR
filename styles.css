@@ -1,0 +1,141 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+  overflow: hidden; /* Impede a barra de rolagem */
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(41, 39, 39, 0); /* Fundo semi-transparente */
+  padding: 10px;
+  box-sizing: border-box;
+  z-index: 1; /* Coloca o cabeçalho acima do vídeo */
+}
+
+header img {
+  width: 7%;
+  margin-right: 1000px; /* Adiciona uma margem direita de 20 pixels entre as imagens */
+  transition: transform 0.3s ease; /* Adiciona uma transição suave ao efeito */
+}
+
+header img:hover {
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho da imagem ao passar o mouse sobre ela */
+}
+
+
+
+#background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0; /* Coloca o vídeo atrás de outros elementos */
+}
+
+#background video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container {
+  position: relative;
+  z-index: 1; /* Coloca o formulário acima do vídeo */
+  margin-top: 200px; /* Aumenta a distância entre o cabeçalho e o contêiner */
+  display: flex;
+  left: 70%;
+  height: calc(50% - 10px); /* Ajusta a altura do contêiner */
+  
+}
+
+
+.container form {
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  background-color: rgba(104, 102, 102, 0.8); /* Fundo semi-transparente */
+  border-radius: 10px;
+}
+
+.input-group {
+  margin-bottom: 20px;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input {
+  width: calc(100% - 20px); /* Ajusta a largura do input */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Estilo para o menu suspenso */
+.dropdown {
+  position: fixed;
+  top: 70px;
+  z-index: 1;
+
+}
+
+.dropbtn {
+  background-color: #5b5f5bc4;
+  color: rgb(20, 20, 20);
+  padding: 40px;
+  font-size: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a img {
+  max-width: 100px;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}

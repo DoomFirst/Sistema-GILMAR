@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Demo Sonic</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="./IMG/Sonic 1.png" alt="logo do sonic">
+        <img src="./IMG/32806c94576ec8d61ce94d1f3582fa40-removebg-preview.png" alt="logo do sonic">
+        <img src="./IMG/egs-sonicorigins-sega-ic1-400x400-dab1667cb666-removebg-preview.png" alt="logo do sonic">
+        <img src="./IMG/png-transparent-sonic-adventure-2-battle-sonic-the-hedgehog-sonic-unleashed-others-removebg-preview.png" alt="logo do sonic">
+    </header>
+    <div>
+        <div id="background">
+            <video loop autoplay muted>
+                <source src="./VIDEO/sonic-frontiers-starfall-moewalls-com.mp4" type="video/mp4">
+            </video>
+            </div>
+    <div class="container">
+        <form id="cadastroForm">
+            <h2>Cadastro</h2>
+            <div class="input-group">
+                <label for="username">Nome de usuário:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="button" onclick="submitForm()">Cadastrar</button>
+        </form>
+    </div>
+
+    <script>
+      function submitForm() {
+          
+          var username = document.getElementById("username").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("password").value;
+
+          
+          var csvRow = username + ',' + email + ',' + password + '\n';
+
+          
+          var blob = new Blob([csvRow], { type: 'text/csv' });
+          var link = document.createElement('a');
+          link.href = window.URL.createObjectURL(blob);
+          link.download = 'data.csv';
+          link.click();
+      }
+  </script>
+</body>
+</html>
